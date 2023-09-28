@@ -5,7 +5,6 @@ from numpy import*
 import numpy 
 import time
 
-
 # bubble sort 
 def bubble_sort(arr):
     def swap(i, j):
@@ -97,30 +96,26 @@ def quick_sort(array, begin=0, end=None):
     # n = 100,000
 
 # make array of size 100 
-
-bubble_array = []
- 
+bubble_array1 = []
 for num in range(100):
-        bubble_array.append(random.randint(1, 1000000))
-        
-print(bubble_array)
-print("Bubble sort")
+    bubble_array1.append(random.randrange(1, 1000000))
     
-print("    Sorted: ", bubble_sort(bubble_array)
-bubble_sorted = bubble_array.sort()
-bubble_sort(bubble_sorted)
-bubble_sorted_reverse = sort.bubble_array(reverse = True)
-    
-merge_array = numpy.copy(bubble_array)
-merge_sorted = sort.merge_array()
-merge_sorted_reverse = sort.merge_array(reverse = True)
-    
-quick_array = numpy.copy(bubble_array)
-quick_sorted = sort.quick_array()
-quick_sorted_reverse= sort.quick_array(reverse = True)
-    
-extra_array = numpy.copy(bubble_array)
-extra_sorted = sort.extra_array()
-extra_sorted_reverse = sort.extra_array(reverse = True)
+bubble_sorted1 = bubble_array1.sort()
+bubble_sorted_reverse1 = sort.bubble_array1(reverse = True)
+
+merge_array1 = numpy.copy(bubble_array1)
+merge_sorted1 = sort.merge_array1()
+merge_sorted_reverse1 = sort.merge_array1(reverse = True)
+
+quick_array1 = numpy.copy(bubble_array1)
+quick_sorted1 = sort.quick_array1()
+quick_sorted_reverse1 = sort.quick_array1(reverse = True)
+
+extra_array1 = numpy.copy(bubble_array1)
+extra_sorted1 = sort.extra_array1()
+extra_sorted_reverse1 = sort.extra_array1(reverse = True)
 
 # make array of size 1000
+bubble_array2 = []
+for num in range(100):
+    bubble_array2.append(random.randrange(1, 1000000))
