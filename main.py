@@ -94,28 +94,37 @@ def quick_sort(array, begin=0, end=None):
     # n = 1000
     # n = 10,000
     # n = 100,000
+    
+    
+def random_array(size, range):
+    temp = []
+    for num in range(size):
+        temp.append(random.randrange(1, range))
+        
 
 # make array of size 100 
 bubble_array1 = []
 for num in range(100):
-    bubble_array1.append(random.randrange(1, 1000000))
+    bubble_array1.append(random.randint(1, 1000)) # random numbers 1 - 1000
     
-bubble_sorted1 = bubble_array1.sort()
-bubble_sorted_reverse1 = sort.bubble_array1(reverse = True)
+print(bubble_array1)
+###############################
+bubble_array1.sort()
+bubble_sorted1 = bubble_array1
+print('sorted array', bubble_sorted1)
+bubble_sorted_reverse1 = bubble_array1[::-1]
+print('reverse sorted array', bubble_sorted_reverse1)
+#####################################
 
 merge_array1 = numpy.copy(bubble_array1)
-merge_sorted1 = sort.merge_array1()
-merge_sorted_reverse1 = sort.merge_array1(reverse = True)
+merge_sorted1 = numpy.sort(bubble_array1)
+#merge_sorted_reverse1 = merge_array1.sort(reverse = True)
 
 quick_array1 = numpy.copy(bubble_array1)
-quick_sorted1 = sort.quick_array1()
-quick_sorted_reverse1 = sort.quick_array1(reverse = True)
+quick_sorted1 = quick_array1.sort()
+#quick_sorted_reverse1 = quick_array1.sort(reverse = True)
 
 extra_array1 = numpy.copy(bubble_array1)
-extra_sorted1 = sort.extra_array1()
-extra_sorted_reverse1 = sort.extra_array1(reverse = True)
+extra_sorted1 = extra_array1.sort()
+#extra_sorted_reverse1 = extra_array1.sort(reverse = True)
 
-# make array of size 1000
-bubble_array2 = []
-for num in range(100):
-    bubble_array2.append(random.randrange(1, 1000000))
