@@ -106,14 +106,15 @@ def random_array(size, range):
 bubble_array1 = []
 for num in range(100):
     bubble_array1.append(random.randint(1, 1000)) # random numbers 1 - 1000
-    
-print(bubble_array1)
+
 ###############################
+print("Bubble Sort: \n")
+print("Unsorted: ", bubble_array1[0:10])
 bubble_array1.sort()
 bubble_sorted1 = bubble_array1
-print('sorted array', bubble_sorted1)
+print('Sorted: ', bubble_sorted1[0:10])
 bubble_sorted_reverse1 = bubble_array1[::-1]
-print('reverse sorted array', bubble_sorted_reverse1)
+print('Reverse sorted: ', bubble_sorted_reverse1[0:10])
 #####################################
 
 merge_array1 = numpy.copy(bubble_array1)
