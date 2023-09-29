@@ -83,6 +83,7 @@ def quick_sort(array, begin=0, end=None):
 
 # sort of our choice 
 
+
 # make sure we test the same arrays to compare each algorithm 
 # make an array and make copies of it 
     # test random generated array
@@ -96,36 +97,245 @@ def quick_sort(array, begin=0, end=None):
     # n = 100,000
     
     
-def random_array(size, range):
-    temp = []
-    for num in range(size):
-        temp.append(random.randrange(1, range))
-        
-
-# make array of size 100 
+################## make array of size 100 ##################
 bubble_array1 = []
 for num in range(100):
-    bubble_array1.append(random.randint(1, 1000)) # random numbers 1 - 1000
+    bubble_array1.append(random.randint(1, 1000)) 
+    
+# make copies for the other sorts 
+merge_array1 = numpy.copy(bubble_array1)
+quick_array1 = numpy.copy(bubble_array1)
+extra_array1 = numpy.copy(bubble_array1)
 
-###############################
-print("Bubble Sort: \n")
+# bubble sort size 100 
+print('\nBubble Sort - size 100')
 print("Unsorted: ", bubble_array1[0:10])
 bubble_array1.sort()
 bubble_sorted1 = bubble_array1
 print('Sorted: ', bubble_sorted1[0:10])
 bubble_sorted_reverse1 = bubble_array1[::-1]
 print('Reverse sorted: ', bubble_sorted_reverse1[0:10])
-#####################################
 
-merge_array1 = numpy.copy(bubble_array1)
-merge_sorted1 = numpy.sort(bubble_array1)
-#merge_sorted_reverse1 = merge_array1.sort(reverse = True)
+# merge sort size 100
+print('\nMerge Sort - size 100')
+print("Unsorted: ", merge_array1[0:10])
+merge_array1.sort()
+merge_sorted1 = merge_array1
+print('Sorted: ', merge_array1[0:10])
+merge_sorted_reverse1 = merge_array1[::-1]
+print('Reverse sorted: ', merge_sorted_reverse1[0:10])
 
-quick_array1 = numpy.copy(bubble_array1)
-quick_sorted1 = quick_array1.sort()
-#quick_sorted_reverse1 = quick_array1.sort(reverse = True)
+# quick sort size 100
+print('\nQuick Sort - size 100')
+print("Unsorted: ", quick_array1[0:10])
+quick_array1.sort()
+quick_sorted1 = quick_array1
+print('Sorted: ', quick_array1[0:10])
+quick_sorted_reverse1 = quick_array1[::-1]
+print('Reverse sorted: ', quick_sorted_reverse1[0:10])
 
-extra_array1 = numpy.copy(bubble_array1)
-extra_sorted1 = extra_array1.sort()
-#extra_sorted_reverse1 = extra_array1.sort(reverse = True)
+# extra sort size 100
+print('\nExtra Sort - size 100')
+print("Unsorted: ", extra_array1[0:10])
+extra_array1.sort()
+extra_sorted1 = extra_array1
+print('Sorted: ', extra_array1[0:10])
+extra_sorted_reverse1 = extra_array1[::-1]
+print('Reverse sorted: ', extra_sorted_reverse1[0:10])
+#############################################################
 
+print('\n-----------------------------------------------------------------------------------------')
+
+################## make array of size 1,000 ##################
+bubble_array2 = []
+for num in range(1000):
+    bubble_array2.append(random.randint(1, 10000)) 
+    
+# make copies for the other sorts 
+merge_array2 = numpy.copy(bubble_array2)
+quick_array2 = numpy.copy(bubble_array2)
+extra_array2 = numpy.copy(bubble_array2)
+
+# bubble sort size 1,000
+print('\nBubble Sort - size 1,000')
+print("Unsorted: ", bubble_array2[0:10])
+bubble_array2.sort()
+bubble_sorted2 = bubble_array2
+print('Sorted: ', bubble_sorted2[0:10])
+bubble_sorted_reverse2 = bubble_array2[::-1]
+print('Reverse sorted: ', bubble_sorted_reverse2[0:10])
+
+# merge sort size 1,000
+print('\nMerge Sort - size 1,000')
+print("Unsorted: ", merge_array2[0:10])
+merge_array2.sort()
+merge_sorted2 = merge_array2
+print('Sorted: ', merge_array2[0:10])
+merge_sorted_reverse2 = merge_array2[::-1]
+print('Reverse sorted: ', merge_sorted_reverse2[0:10])
+
+# quick sort size 1,000
+print('\nQuick Sort - size 1,000')
+print("Unsorted: ", quick_array2[0:10])
+quick_array2.sort()
+quick_sorted2 = quick_array2
+print('Sorted: ', quick_array2[0:10])
+quick_sorted_reverse2 = quick_array2[::-1]
+print('Reverse sorted: ', quick_sorted_reverse2[0:10])
+
+# extra sort size 1,000
+print('\nExtra Sort - size 1,000')
+print("Unsorted: ", extra_array2[0:10])
+extra_array2.sort()
+extra_sorted2 = extra_array2
+print('Sorted: ', extra_array2[0:10])
+extra_sorted_reverse2 = extra_array2[::-1]
+print('Reverse sorted: ', extra_sorted_reverse2[0:10])
+#############################################################
+
+print('\n-----------------------------------------------------------------------------------------')
+
+################## make array of size 10,000 ##################
+bubble_array3 = []
+for num in range(10000):
+    bubble_array3.append(random.randint(1, 100000)) 
+    
+# make copies for the other sorts 
+merge_array3 = numpy.copy(bubble_array3)
+quick_array3 = numpy.copy(bubble_array3)
+extra_array3 = numpy.copy(bubble_array3)
+
+# bubble sort size 10,000 
+print('\nBubble Sort - size 10,000')
+print("Unsorted: ", bubble_array3[0:10])
+bubble_array3.sort()
+bubble_sorted3 = bubble_array3
+print('Sorted: ', bubble_sorted3[0:10])
+bubble_sorted_reverse3 = bubble_array3[::-1]
+print('Reverse sorted: ', bubble_sorted_reverse3[0:10])
+
+# merge sort size 10,000
+print('\nMerge Sort - size 10,000')
+print("Unsorted: ", merge_array3[0:10])
+merge_array3.sort()
+merge_sorted3 = merge_array3
+print('Sorted: ', merge_array3[0:10])
+merge_sorted_reverse3 = merge_array3[::-1]
+print('Reverse sorted: ', merge_sorted_reverse3[0:10])
+
+# quick sort size 10,000
+print('\nQuick Sort - size 10,000')
+print("Unsorted: ", quick_array3[0:10])
+quick_array3.sort()
+quick_sorted3 = quick_array3
+print('Sorted: ', quick_array3[0:10])
+quick_sorted_reverse3 = quick_array3[::-1]
+print('Reverse sorted: ', quick_sorted_reverse3[0:10])
+
+# extra sort size 10,000
+print('\nExtra Sort - size 10,000')
+print("Unsorted: ", extra_array3[0:10])
+extra_array3.sort()
+extra_sorted3 = extra_array3
+print('Sorted: ', extra_array3[0:10])
+extra_sorted_reverse3 = extra_array3[::-1]
+print('Reverse sorted: ', extra_sorted_reverse3[0:10])
+#############################################################
+
+print('\n-----------------------------------------------------------------------------------------')
+
+################## make array of size 100,000 ##################
+bubble_array4 = []
+for num in range(100000):
+    bubble_array4.append(random.randint(1, 1000000)) 
+    
+# make copies for the other sorts 
+merge_array4 = numpy.copy(bubble_array4)
+quick_array4 = numpy.copy(bubble_array4)
+extra_array4 = numpy.copy(bubble_array4)
+
+# bubble sort size 100,000
+print('\nBubble Sort - size 100,000')
+print("Unsorted: ", bubble_array4[0:10])
+bubble_array4.sort()
+bubble_sorted4 = bubble_array4
+print('Sorted: ', bubble_sorted4[0:10])
+bubble_sorted_reverse4 = bubble_array4[::-1]
+print('Reverse sorted: ', bubble_sorted_reverse4[0:10])
+
+# merge sort size 100,000
+print('\nMerge Sort - size 100,000')
+print("Unsorted: ", merge_array4[0:10])
+merge_array4.sort()
+merge_sorted4 = merge_array4
+print('Sorted: ', merge_array4[0:10])
+merge_sorted_reverse4 = merge_array4[::-1]
+print('Reverse sorted: ', merge_sorted_reverse4[0:10])
+
+# quick sort size 100,000
+print('\nQuick Sort - size 100,000')
+print("Unsorted: ", quick_array4[0:10])
+quick_array4.sort()
+quick_sorted4 = quick_array4
+print('Sorted: ', quick_array4[0:10])
+quick_sorted_reverse4 = quick_array4[::-1]
+print('Reverse sorted: ', quick_sorted_reverse4[0:10])
+
+# extra sort size 100,000
+print('\nExtra Sort - size 100,000')
+print("Unsorted: ", extra_array4[0:10])
+extra_array4.sort()
+extra_sorted4 = extra_array4
+print('Sorted: ', extra_array4[0:10])
+extra_sorted_reverse4 = extra_array4[::-1]
+print('Reverse sorted: ', extra_sorted_reverse4[0:10])
+#############################################################
+
+print('\n-----------------------------------------------------------------------------------------')
+
+################## make array of size 1,000,000 ##################
+bubble_array5 = []
+for num in range(1000000):
+    bubble_array5.append(random.randint(1, 10000000)) 
+    
+# make copies for the other sorts 
+merge_array5 = numpy.copy(bubble_array5)
+quick_array5 = numpy.copy(bubble_array5)
+extra_array5 = numpy.copy(bubble_array5)
+
+# bubble sort size 1,000,000 
+print('\nBubble Sort - size 1,000,000')
+print("Unsorted: ", bubble_array5[0:10])
+bubble_array5.sort()
+bubble_sorted5 = bubble_array5
+print('Sorted: ', bubble_sorted5[0:10])
+bubble_sorted_reverse5 = bubble_array5[::-1]
+print('Reverse sorted: ', bubble_sorted_reverse5[0:10])
+
+# merge sort size 1,000,000
+print('\nMerge Sort - size 1,000,000')
+print("Unsorted: ", merge_array5[0:10])
+merge_array5.sort()
+merge_sorted5 = merge_array5
+print('Sorted: ', merge_array5[0:10])
+merge_sorted_reverse5 = merge_array5[::-1]
+print('Reverse sorted: ', merge_sorted_reverse5[0:10])
+
+# quick sort size 1,000,000
+print('\nQuick Sort - size 1,000,000')
+print("Unsorted: ", quick_array5[0:10])
+quick_array5.sort()
+quick_sorted5 = quick_array5
+print('Sorted: ', quick_array5[0:10])
+quick_sorted_reverse5 = quick_array5[::-1]
+print('Reverse sorted: ', quick_sorted_reverse5[0:10])
+
+# extra sort size 1,000,000
+print('\nExtra Sort - size 1,000,000')
+print("Unsorted: ", extra_array5[0:10])
+extra_array5.sort()
+extra_sorted5 = extra_array5
+print('Sorted: ', extra_array5[0:10])
+extra_sorted_reverse5 = extra_array5[::-1]
+print('Reverse sorted: ', extra_sorted_reverse5[0:10])
+#############################################################
