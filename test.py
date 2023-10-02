@@ -1,10 +1,3 @@
-# -*- coding: utf-8 -*-
-"""
-Created on Sun Oct  1 16:18:26 2023
-
-@author: Valued Customer
-"""
-
 import random
 from numpy import*
 import numpy 
