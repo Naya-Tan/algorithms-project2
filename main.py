@@ -438,33 +438,33 @@ print('Test Reverse sorted: ', merge_sorted_reverse3[0:10])
 print('Time elapsed: ', time_elapsed)
 
 # quick sort size 10,000
-print('\nQuick Sort - size 10,000')
-print("Unsorted: ", quick_array3[0:10])
-start_time = time.time() #Get time at start of sort
-quick_sort(quick_array3)
-end_time = time.time() #Get time at end of sort
-time_elapsed = end_time - start_time #Calculate time elapsed
-print('Test Unsorted: ', quick_array3[0:10])
-print('Time elapsed: ', time_elapsed)
+#print('\nQuick Sort - size 10,000')
+#print("Unsorted: ", quick_array3[0:10])
+#start_time = time.time() #Get time at start of sort
+#quick_sort(quick_array3)
+#end_time = time.time() #Get time at end of sort
+#time_elapsed = end_time - start_time #Calculate time elapsed
+#print('Test Unsorted: ', quick_array3[0:10])
+#print('Time elapsed: ', time_elapsed)
 
-quick_array3.sort()
-quick_sorted3 = quick_array3
-print('Sorted: ', quick_sorted3[0:10])
-start_time = time.time() #Get time at start of sort
-quick_sort(quick_sorted3)
-end_time = time.time() #Get time at end of sort
-time_elapsed = end_time - start_time #Calculate time elapsed
-print('Test sorted: ', quick_sorted3[0:10])
-print('Time elapsed: ', time_elapsed)
+#quick_array3.sort()
+#quick_sorted3 = quick_array3
+#print('Sorted: ', quick_sorted3[0:10])
+#start_time = time.time() #Get time at start of sort
+#quick_sort(quick_sorted3)
+#end_time = time.time() #Get time at end of sort
+#time_elapsed = end_time - start_time #Calculate time elapsed
+#print('Test sorted: ', quick_sorted3[0:10])
+##print('Time elapsed: ', time_elapsed)
 
-quick_sorted_reverse3 = quick_array3[::-1]
-print('Reverse sorted: ', quick_sorted_reverse3[0:10])
-start_time = time.time()
-quick_sort(quick_sorted_reverse3)
-end_time = time.time() #Get time at end of sort
-time_elapsed = end_time - start_time #Calculate time elapsed
-print('Test Reverse sorted: ', quick_sorted_reverse3[0:10])
-print('Time elapsed: ', time_elapsed)
+#quick_sorted_reverse3 = quick_array3[::-1]
+#print('Reverse sorted: ', quick_sorted_reverse3[0:10])
+#start_time = time.time()
+#quick_sort(quick_sorted_reverse3)
+#end_time = time.time() #Get time at end of sort
+#time_elapsed = end_time - start_time #Calculate time elapsed
+#print('Test Reverse sorted: ', quick_sorted_reverse3[0:10])
+#print('Time elapsed: ', time_elapsed)
 
 # extra sort size 10,000
 print('\nShell Sort - size 10,000')
@@ -510,33 +510,33 @@ quick_array4 = numpy.copy(bubble_array4)
 shell_array4 = numpy.copy(bubble_array4)
 
 # bubble sort size 100,000
-print('\nBubble Sort - size 100,000')
-print("Unsorted: ", bubble_array4[0:10])
-start_time = time.time() #Get time at start of sort
-bubble_sort(bubble_array4)
-end_time = time.time() #Get time at end of sort
-time_elapsed = end_time - start_time #Calculate time elapsed
-print('Test Unsorted: ', bubble_array4[0:10])
-print('Time elapsed: ', time_elapsed)
+#print('\nBubble Sort - size 100,000')
+#print("Unsorted: ", bubble_array4[0:10])
+#start_time = time.time() #Get time at start of sort
+#bubble_sort(bubble_array4)
+#end_time = time.time() #Get time at end of sort
+#time_elapsed = end_time - start_time #Calculate time elapsed
+#print('Test Unsorted: ', bubble_array4[0:10])
+#print('Time elapsed: ', time_elapsed)
 
-bubble_array4.sort()
-bubble_sorted4 = bubble_array4
-print('Sorted: ', bubble_sorted4[0:10])
-start_time = time.time() #Get time at start of sort
-bubble_sort(bubble_sorted4)
-end_time = time.time() #Get time at end of sort
-time_elapsed = end_time - start_time #Calculate time elapsed
-print('Test Sorted: ', bubble_sorted4[0:10])
-print('Time elapsed: ', time_elapsed)
+#bubble_array4.sort()
+#bubble_sorted4 = bubble_array4
+#print('Sorted: ', bubble_sorted4[0:10])
+#start_time = time.time() #Get time at start of sort
+#bubble_sort(bubble_sorted4)
+#end_time = time.time() #Get time at end of sort
+#time_elapsed = end_time - start_time #Calculate time elapsed
+#print('Test Sorted: ', bubble_sorted4[0:10])
+#print('Time elapsed: ', time_elapsed)
 
-bubble_sorted_reverse4 = bubble_array4[::-1]
-print('Reverse sorted: ', bubble_sorted_reverse4[0:10])
-start_time = time.time() #Get time at start of sort
-bubble_sort(bubble_sorted_reverse4)
-end_time = time.time() #Get time at end of sort
-time_elapsed = end_time - start_time #Calculate time elapsed
-print('Test Reverse sorted: ', bubble_sorted_reverse4[0:10])
-print('Time elapsed: ', time_elapsed)
+#bubble_sorted_reverse4 = bubble_array4[::-1]
+#print('Reverse sorted: ', bubble_sorted_reverse4[0:10])
+#start_time = time.time() #Get time at start of sort
+#bubble_sort(bubble_sorted_reverse4)
+#end_time = time.time() #Get time at end of sort
+#time_elapsed = end_time - start_time #Calculate time elapsed
+#print('Test Reverse sorted: ', bubble_sorted_reverse4[0:10])
+#print('Time elapsed: ', time_elapsed)
 
 # merge sort size 100,000
 print('\nMerge Sort - size 100,000')
@@ -576,24 +576,24 @@ time_elapsed = end_time - start_time #Calculate time elapsed
 print('Test Unsorted: ', quick_array4[0:10])
 print('Time elapsed: ', time_elapsed)
 
-quick_array4.sort()
-quick_sorted4 = quick_array4
-print('Sorted: ', quick_sorted4[0:10])
-start_time = time.time() #Get time at start of sort
-quick_sort(quick_sorted4)
-end_time = time.time() #Get time at end of sort
-time_elapsed = end_time - start_time #Calculate time elapsed
-print('Test sorted: ', quick_sorted4[0:10])
-print('Time elapsed: ', time_elapsed)
+#quick_array4.sort()
+#quick_sorted4 = quick_array4
+#print('Sorted: ', quick_sorted4[0:10])
+#start_time = time.time() #Get time at start of sort
+#quick_sort(quick_sorted4)
+#end_time = time.time() #Get time at end of sort
+#time_elapsed = end_time - start_time #Calculate time elapsed
+#print('Test sorted: ', quick_sorted4[0:10])
+#print('Time elapsed: ', time_elapsed)
 
-quick_sorted_reverse4 = quick_array4[::-1]
-print('Reverse sorted: ', quick_sorted_reverse4[0:10])
-start_time = time.time() #Get time at start of sort
-quick_sort(quick_sorted_reverse4)
-end_time = time.time() #Get time at end of sort
-time_elapsed = end_time - start_time #Calculate time elapsed
-print('Test Reverse sorted: ', quick_sorted_reverse4[0:10])
-print('Time elapsed: ', time_elapsed)
+#quick_sorted_reverse4 = quick_array4[::-1]
+#print('Reverse sorted: ', quick_sorted_reverse4[0:10])
+#start_time = time.time() #Get time at start of sort
+#quick_sort(quick_sorted_reverse4)
+#end_time = time.time() #Get time at end of sort
+#time_elapsed = end_time - start_time #Calculate time elapsed
+#print('Test Reverse sorted: ', quick_sorted_reverse4[0:10])
+#print('Time elapsed: ', time_elapsed)
 
 # extra sort size 100,000
 print('\nShell Sort - size 100,000')
@@ -626,6 +626,16 @@ print('Time elapsed: ', time_elapsed)
 
 print('\n-----------------------------------------------------------------------------------------')
 
+################## make array of size 100,000 ##################
+bubble_array5 = []
+for num in range(100000):
+    bubble_array5.append(random.randint(1, 1000000)) 
+    
+# make copies for the other sorts 
+merge_array5 = numpy.copy(bubble_array5)
+quick_array5 = numpy.copy(bubble_array5)
+shell_array5 = numpy.copy(bubble_array5)
+
 # # bubble sort size 1,000,000 
 # print('\nBubble Sort - size 1,000,000')
 # print("Unsorted: ", bubble_array5[0:10])
@@ -642,13 +652,13 @@ print('\n-----------------------------------------------------------------------
 
 
 # # merge sort size 1,000,000
-# print('\nMerge Sort - size 1,000,000')
-# print("Unsorted: ", merge_array5[0:10])
-# merge_array5.sort()
-# merge_sorted5 = merge_array5
-# print('Sorted: ', merge_array5[0:10])
-# merge_sorted_reverse5 = merge_array5[::-1]
-# print('Reverse sorted: ', merge_sorted_reverse5[0:10])
+#print('\nMerge Sort - size 1,000,000')
+#print("Unsorted: ", merge_array5[0:10])
+#merge_array5.sort()
+#merge_sorted5 = merge_array5
+#print('Sorted: ', merge_array5[0:10])
+#merge_sorted_reverse5 = merge_array5[::-1]
+#print('Reverse sorted: ', merge_sorted_reverse5[0:10])
 
 # # quick sort size 1,000,000
 # print('\nQuick Sort - size 1,000,000')
