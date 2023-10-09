@@ -23,37 +23,67 @@ def bubble_sort(arr):
                     
     return arr
 
-#Source: Algorithms chapter 2 lecture note page 11
-# merge sort 
-def merge_sort(arr):
-    if len(arr) <= 1:
-        return arr
-    mid = len(arr) // 2
-    left, right = merge_sort(arr[:mid]), merge_sort(arr[mid:])
-    
-    return merge(left, right, arr.copy())
+#Merge sort
+#Source: https://www.geeksforgeeks.org/python-program-for-merge-sort/
+def merge(arr, l, m, r):
+	n1 = m - l + 1
+	n2 = r - m
+
+	# create temp arrays
+	L = [0] * (n1)
+	R = [0] * (n2)
+
+	# Copy data to temp arrays L[] and R[]
+	for i in range(0, n1):
+		L[i] = arr[l + i]
+
+	for j in range(0, n2):
+		R[j] = arr[m + 1 + j]
+
+	# Merge the temp arrays back into arr[l..r]
+	i = 0	 # Initial index of first subarray
+	j = 0	 # Initial index of second subarray
+	k = l	 # Initial index of merged subarray
+
+	while i < n1 and j < n2:
+		if L[i] <= R[j]:
+			arr[k] = L[i]
+			i += 1
+		else:
+			arr[k] = R[j]
+			j += 1
+		k += 1
+
+	# Copy the remaining elements of L[], if there
+	# are any
+	while i < n1:
+		arr[k] = L[i]
+		i += 1
+		k += 1
+
+	# Copy the remaining elements of R[], if there
+	# are any
+	while j < n2:
+		arr[k] = R[j]
+		j += 1
+		k += 1
+
+# l is for left index and r is right index of the
+# sub-array of arr to be sorted
 
 
-def merge(left, right, merged):
+def merge_sort(arr, l, r):
+	if l < r:
 
-    left_cursor, right_cursor = 0, 0
-    while left_cursor < len(left) and right_cursor < len(right):
-      
-        # Sort each one and place into the result
-        if left[left_cursor] <= right[right_cursor]:
-            merged[left_cursor+right_cursor]=left[left_cursor]
-            left_cursor += 1
-        else:
-            merged[left_cursor + right_cursor] = right[right_cursor]
-            right_cursor += 1
-            
-    for left_cursor in range(left_cursor, len(left)):
-        merged[left_cursor + right_cursor] = left[left_cursor]
-        
-    for right_cursor in range(right_cursor, len(right)):
-        merged[left_cursor + right_cursor] = right[right_cursor]
+		# Same as (l+r)//2, but avoids overflow for
+		# large l and h
+		m = l+(r-l)//2
 
-    return merged
+		# Sort first and second halves
+		merge_sort(arr, l, m)
+		merge_sort(arr, m+1, r)
+		merge(arr, l, m, r)
+
 
 #Source: https://www.mybluelinux.com/top-5-sorting-algorithms-with-python-code/
 # quick sort 
@@ -111,7 +141,7 @@ def shell_sort(arr, n):
     
 ################## make array of size 100 ##################
 
-size = [100, 1000, 10000, 100000]
+size = [100, 1000, 10000, 100000, 1000000]
 
 for n in size:
     bubble_array1 = []
@@ -123,40 +153,41 @@ for n in size:
     quick_array1 = numpy.copy(bubble_array1)
     shell_array1 = numpy.copy(bubble_array1)
     
-    # bubble sort size n 
-    print('\nBubble Sort - size ', n)
-    print("Unsorted: ", bubble_array1[0:10])
-    start_time = time.time() #Get time at start of sort
-    bubble_sort(bubble_array1)
-    end_time = time.time() #Get time at end of sort
-    time_elapsed = end_time - start_time #Calculate time elapsed
-    print('Test Unsorted: ', bubble_array1[0:10])
-    print('Time elapsed: ', time_elapsed)
-    
-    bubble_array1.sort()
-    bubble_sorted1 = bubble_array1
-    print('Sorted: ', bubble_sorted1[0:10])
-    start_time = time.time() #Get time at start of sort
-    bubble_sort(bubble_sorted1)
-    end_time = time.time() #Get time at end of sort
-    time_elapsed = end_time - start_time #Calculate time elapsed
-    print('Test Sorted: ', bubble_sorted1[0:10])
-    print('Time elapsed: ', time_elapsed)
-    
-    bubble_sorted_reverse1 = bubble_array1[::-1]
-    print('Reverse sorted: ', bubble_sorted_reverse1[0:10])
-    start_time = time.time() #Get time at start of sort
-    bubble_sort(bubble_sorted_reverse1)
-    end_time = time.time() #Get time at end of sort
-    time_elapsed = end_time - start_time #Calculate time elapsed
-    print('Test Reverse sorted: ', bubble_sorted_reverse1[0:10])
-    print('Time elapsed: ', time_elapsed)
+    if n < 100000:
+        # bubble sort size n 
+        print('\nBubble Sort - size ', n)
+        print("Unsorted: ", bubble_array1[0:10])
+        start_time = time.time() #Get time at start of sort
+        bubble_sort(bubble_array1)
+        end_time = time.time() #Get time at end of sort
+        time_elapsed = end_time - start_time #Calculate time elapsed
+        print('Test Unsorted: ', bubble_array1[0:10])
+        print('Time elapsed: ', time_elapsed)
+        
+        bubble_array1.sort()
+        bubble_sorted1 = bubble_array1
+        print('Sorted: ', bubble_sorted1[0:10])
+        start_time = time.time() #Get time at start of sort
+        bubble_sort(bubble_sorted1)
+        end_time = time.time() #Get time at end of sort
+        time_elapsed = end_time - start_time #Calculate time elapsed
+        print('Test Sorted: ', bubble_sorted1[0:10])
+        print('Time elapsed: ', time_elapsed)
+        
+        bubble_sorted_reverse1 = bubble_array1[::-1]
+        print('Reverse sorted: ', bubble_sorted_reverse1[0:10])
+        start_time = time.time() #Get time at start of sort
+        bubble_sort(bubble_sorted_reverse1)
+        end_time = time.time() #Get time at end of sort
+        time_elapsed = end_time - start_time #Calculate time elapsed
+        print('Test Reverse sorted: ', bubble_sorted_reverse1[0:10])
+        print('Time elapsed: ', time_elapsed)
     
     # merge sort size n
     print('\nMerge Sort - size ', n)
     print("Unsorted: ", merge_array1[0:10])
     start_time = time.time() #Get time at start of sort
-    merge_sort(merge_array1)
+    merge_sort(merge_array1, 0, n-1)
     end_time = time.time() #Get time at end of sort
     time_elapsed = end_time - start_time #Calculate time elapsed
     print('Test Unsorted: ', merge_array1[0:10])
@@ -166,7 +197,7 @@ for n in size:
     merge_sorted1 = merge_array1
     print('Sorted: ', merge_array1[0:10])
     start_time = time.time() #Get time at start of sort
-    merge_sort(merge_sorted1)
+    merge_sort(merge_sorted1, 0, n-1)
     end_time = time.time() #Get time at end of sort
     time_elapsed = end_time - start_time #Calculate time elapsed
     print('Test Sorted: ', merge_sorted1[0:10])
@@ -175,41 +206,43 @@ for n in size:
     merge_sorted_reverse1 = merge_array1[::-1]
     print('Reverse sorted: ', merge_sorted_reverse1[0:10])
     start_time = time.time() #Get time at start of sort
-    merge_sort(merge_sorted_reverse1)
+    merge_sort(merge_sorted_reverse1, 0, n-1)
     end_time = time.time() #Get time at end of sort
     time_elapsed = end_time - start_time #Calculate time elapsed
     print('Test Reverse sorted: ', merge_sorted_reverse1[0:10])
     print('Time elapsed: ', time_elapsed)
     
-    # quick sort size n
-    print('\nQuick Sort - size ', n)
-    print("Unsorted: ", quick_array1[0:10])
-    start_time = time.time() #Get time at start of sort
-    quick_sort(quick_array1)
-    end_time = time.time() #Get time at end of sort
-    time_elapsed = end_time - start_time #Calculate time elapsed
-    print('Test Unsorted: ', quick_array1[0:10])
-    print('Time elapsed: ', time_elapsed)
-    
-    
-    quick_array1.sort()
-    quick_sorted1 = quick_array1
-    print('Sorted: ', quick_sorted1[0:10])
-    start_time = time.time() #Get time at start of sort
-    quick_sort(quick_sorted1)
-    end_time = time.time() #Get time at end of sort
-    time_elapsed = end_time - start_time #Calculate time elapsed
-    print('Test sorted: ', quick_sorted1[0:10])
-    print('Time elapsed: ', time_elapsed)
-    
-    quick_sorted_reverse1 = quick_array1[::-1]
-    print('Reverse sorted: ', quick_sorted_reverse1[0:10])
-    start_time = time.time() #Get time at start of sort
-    quick_sort(quick_sorted_reverse1)
-    end_time = time.time() #Get time at end of sort
-    time_elapsed = end_time - start_time #Calculate time elapsed
-    print('Test Reverse sorted: ', quick_sorted_reverse1[0:10])
-    print('Time elapsed: ', time_elapsed)
+    #Skip quick sort for 100'000 and 1'000'000
+    if n < 100000:
+        # quick sort size n
+        print('\nQuick Sort - size ', n)
+        print("Unsorted: ", quick_array1[0:10])
+        start_time = time.time() #Get time at start of sort
+        quick_sort(quick_array1)
+        end_time = time.time() #Get time at end of sort
+        time_elapsed = end_time - start_time #Calculate time elapsed
+        print('Test Unsorted: ', quick_array1[0:10])
+        print('Time elapsed: ', time_elapsed)
+        
+        
+        quick_array1.sort()
+        quick_sorted1 = quick_array1
+        print('Sorted: ', quick_sorted1[0:10])
+        start_time = time.time() #Get time at start of sort
+        quick_sort(quick_sorted1)
+        end_time = time.time() #Get time at end of sort
+        time_elapsed = end_time - start_time #Calculate time elapsed
+        print('Test sorted: ', quick_sorted1[0:10])
+        print('Time elapsed: ', time_elapsed)
+        
+        quick_sorted_reverse1 = quick_array1[::-1]
+        print('Reverse sorted: ', quick_sorted_reverse1[0:10])
+        start_time = time.time() #Get time at start of sort
+        quick_sort(quick_sorted_reverse1)
+        end_time = time.time() #Get time at end of sort
+        time_elapsed = end_time - start_time #Calculate time elapsed
+        print('Test Reverse sorted: ', quick_sorted_reverse1[0:10])
+        print('Time elapsed: ', time_elapsed)
     
     # extra sort size n
     print('\nShell Sort - size ', n)
